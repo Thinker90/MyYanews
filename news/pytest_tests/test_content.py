@@ -5,14 +5,10 @@ from pytest_django.asserts import assertRedirects
 
 
 @pytest.mark.django_db
-@pytest.mark.parametrize(
-    'name',
-    ('news:home',)
-)
-def test_home_page(client, news, name):
+def test_home_page(client, news):
     for i in range(11):
         news
-    url = reverse(name)
+    url = reverse('news:home')
     response = client.get(url)
     assert response.status_code == HTTPStatus.OK
     assert len(response.context['object_list']) <= 10

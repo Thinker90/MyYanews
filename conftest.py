@@ -44,3 +44,8 @@ def id_news(news):
 @pytest.fixture
 def id_comment(comment):
     return (comment.id,)
+
+
+@pytest.fixture
+def form_data():
+    return {'text': 'Новый текст',}

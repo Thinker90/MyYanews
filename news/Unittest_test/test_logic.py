@@ -12,7 +12,7 @@ from news.models import Comment, News
 User = get_user_model()
 
 
-class TestCommentCreation(TestCase):
+class TestNoteCreation(TestCase):
     # Текст комментария понадобится в нескольких местах кода,
     # поэтому запишем его в атрибуты класса.
     COMMENT_TEXT = 'Текст комментария'
